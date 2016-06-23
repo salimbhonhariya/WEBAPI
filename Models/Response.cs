@@ -788,7 +788,7 @@ namespace WebAPIConceptUsingFileSystem.Models
 
         public static bool SendEmail(string to, string subject, string body)
         {
-            return SendEmail("do-not-reply-zipformplus@mail.project.com", to, subject, body, null);
+            return SendEmail("do-not-reply-project@mail.project.com", to, subject, body, null);
         }
 
         public static bool SendEmail(string from, string to, string subject, string body)
@@ -910,14 +910,14 @@ namespace WebAPIConceptUsingFileSystem.Models
             if (f.Length > 0)
                 return f;
             else
-                return "do-not-reply-zipformplus@mail.project.com";
+                return "do-not-reply-project@mail.project.com";
         }
 
 
         #region Email methods with NDR check
         public static Response SendEmailWithNdrCheck(string to, string subject, string body)
         {
-            return SendEmailWithNdrCheck("do-not-reply-zipformplus@mail.project.com", to, subject, body, null);
+            return SendEmailWithNdrCheck("do-not-reply-project@mail.project.com", to, subject, body, null);
         }
 
         public static Response SendEmailWithNdrCheck(string from, string to, string subject, string body)
