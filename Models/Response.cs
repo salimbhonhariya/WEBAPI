@@ -349,7 +349,7 @@ namespace WebAPIConceptUsingFileSystem.Models
                     + "form, the source or image version of this webpage or form, or any portion of any of the foregoing,\n"
                     + "including but not limited to the HTML code, javascript, CSS, or images, by photocopy machine or any other means,\n"
                     + "including but not limited to, use of copy/paste or save as functions, or by copying the source of any portion of the page.\n"
-                    + "Copyright© " + DateTime.Now.Year.ToString() + ", zipLogix.  ALL RIGHTS RESERVED. \n"
+                    + "Copyright© " + DateTime.Now.Year.ToString() + ", project.  ALL RIGHTS RESERVED. \n"
                     + (asMarkup ? "-->\n" : "*/\n");
         }
 
@@ -788,7 +788,7 @@ namespace WebAPIConceptUsingFileSystem.Models
 
         public static bool SendEmail(string to, string subject, string body)
         {
-            return SendEmail("do-not-reply-zipformplus@mail.ziplogix.com", to, subject, body, null);
+            return SendEmail("do-not-reply-zipformplus@mail.project.com", to, subject, body, null);
         }
 
         public static bool SendEmail(string from, string to, string subject, string body)
@@ -856,7 +856,7 @@ namespace WebAPIConceptUsingFileSystem.Models
 
                 SmtpClient client;
                 string faxSmtpHost = ConfigurationManager.AppSettings["FaxOverrideSmtpHostIP"];
-                if (to.Contains("@fax.ziplogix") && !string.IsNullOrEmpty(faxSmtpHost))
+                if (to.Contains("@fax.project") && !string.IsNullOrEmpty(faxSmtpHost))
                 {
                     client = new SmtpClient(faxSmtpHost);
                 }
@@ -910,14 +910,14 @@ namespace WebAPIConceptUsingFileSystem.Models
             if (f.Length > 0)
                 return f;
             else
-                return "do-not-reply-zipformplus@mail.ziplogix.com";
+                return "do-not-reply-zipformplus@mail.project.com";
         }
 
 
         #region Email methods with NDR check
         public static Response SendEmailWithNdrCheck(string to, string subject, string body)
         {
-            return SendEmailWithNdrCheck("do-not-reply-zipformplus@mail.ziplogix.com", to, subject, body, null);
+            return SendEmailWithNdrCheck("do-not-reply-zipformplus@mail.project.com", to, subject, body, null);
         }
 
         public static Response SendEmailWithNdrCheck(string from, string to, string subject, string body)
@@ -1007,7 +1007,7 @@ namespace WebAPIConceptUsingFileSystem.Models
 
                 SmtpClient client;
                 string faxSmtpHost = ConfigurationManager.AppSettings["FaxOverrideSmtpHostIP"];
-                if (to.Contains("@fax.ziplogix") && !string.IsNullOrEmpty(faxSmtpHost))
+                if (to.Contains("@fax.project") && !string.IsNullOrEmpty(faxSmtpHost))
                 {
                     client = new SmtpClient(faxSmtpHost);
                 }
@@ -1312,7 +1312,7 @@ namespace WebAPIConceptUsingFileSystem.Models
                 httpRequest.KeepAlive = false;
                 httpRequest.ProtocolVersion = new Version(1, 0);
                 httpRequest.SendChunked = false;
-                httpRequest.UserAgent = "zipLogix/http";
+                httpRequest.UserAgent = "project/http";
                 if (!string.IsNullOrEmpty(cookieHeader))
                 {
                     httpRequest.Headers.Add("Cookie", cookieHeader);
